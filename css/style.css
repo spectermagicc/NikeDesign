@@ -1,0 +1,228 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url(../img/bg-red.png);
+    background-position: center;
+    height: 100vh;
+}
+
+.principal{
+    width: 80%;
+    margin: auto;
+}
+
+/*Nav*/
+.nav{
+    margin: 30px auto;
+    display: flex;
+    align-items: center;
+
+}
+
+.nav ul{
+    flex: 1;
+    text-align: right;
+    text-transform: uppercase;
+    font-family: 'Spartan', Helvaltica;
+}
+
+.nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 0 25px;
+}
+
+.nav ul li a{
+    text-decoration: none;
+    color: black;
+    padding: 8px 10px;
+    position: relative;
+}
+
+.nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 10px;
+    background: crimson;
+    position: absolute;
+    left: 50%;
+    top: -150%;
+    transform: translateX(-50%);
+}
+.nav ul li a:hover::after{
+    width: 100%;
+    transition-duration: .3s;
+}
+
+.nav .iconos i{
+    width: 30px;
+    margin: 0 10px;
+    cursor: pointer;
+    position: relative;
+
+}
+
+.nav .iconos i:hover{
+    animation: tiembla 1s ease infinite;
+    color: crimson;
+    transition-duration: .3s;
+}
+
+
+.fondo{
+    width: 100%;
+    display: flex;
+    margin-bottom: 60px;
+    margin-top: 60px;
+}
+
+.izquierda{
+    flex-basis: 50%;
+    text-align: center;
+    font-family: 'Fugaz One', cursive;
+}
+
+.izquierda .titulo{
+    font-size:150px;
+}
+
+.izquierda .subtitulo{
+    font-family: Helvetica, sans-serif;
+    font-size: 60px;
+    text-align: start;
+    margin-top: -50px;
+    padding-left: 100px;
+    z-index: 1;
+    position: relative;
+}
+
+.izquierda .subtitulo::after{
+    content: '';
+    width: 270px;
+    height: 20px;
+    background-color: rgb(226, 1, 1);
+    z-index: -1;
+    position: absolute;
+    left: 90px;
+    top: 25px;
+}
+.izquierda .btn{
+    margin-top: 30px;
+}
+.izquierda .btn button{
+    background: rgb(14, 14, 14);
+    padding: 15px 30px;
+    margin-right: 15px;
+    outline: none;
+    border: 1px solid white;
+    border-radius: 20px;
+    cursor: pointer;
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Spartan', Helvetica, sans-serif;
+}
+
+.izquierda .btn button:hover{
+    background: black;
+    transition-duration: .3s;
+}
+.derecha{
+    margin-top: -100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-basis: 50%;
+}
+
+.fondo img{
+    width: 300px;
+    box-shadow: 1px 1px 3px 1px black;
+}
+
+
+.rrss{
+    margin-top: 20px;
+}
+
+.rrss i{
+    margin: 0 5px;
+    font-size: 40px;
+    color: black;
+}
+
+.rrss .fb i:hover,
+.rrss .tw i:hover,
+.rrss .ig i:hover{
+    color: white;
+}
+
+/*Código para rotar la imagen*/
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+    width: 320px;
+    height: 200px;
+}
+  
+  /* This container is needed to position the front and back side */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+
+
+/* Style the back side */
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+/*https://www.w3schools.com/howto/howto_css_flip_card.asp*/
+/**/
+
+@keyframes tiembla{
+    0%  { transform:rotateZ(-5deg); }
+    50% { transform:rotateZ( 0deg); }
+    100%{ transform:rotateZ( 5deg);}
+}
+
+@media screen and (max-width: 800px){
+
+    body{
+        height: auto;
+    }
+    .fondo{        display: inline-block;
+    }
+    
+    .principal{
+        width: 100%;
+    }
+    .fondo .derecha{
+        margin-top: 20px;
+    }
+
+    .fondo .derecha img{
+        margin-bottom: 20px;
+    }
+}
